@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "delivery": "apps/delivery",
+    "mail-sms": "apps/mail-sms",
     "payment": "apps/payment",
     "seller": "apps/seller"
   }
