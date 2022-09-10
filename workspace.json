@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "buyer": "apps/buyer",
     "delivery": "apps/delivery",
     "mail-sms": "apps/mail-sms",
     "payment": "apps/payment",

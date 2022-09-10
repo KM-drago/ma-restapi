@@ -39,8 +39,8 @@ export class ItemController {
 
   @Get('find-by-seller/:name')
   async getAllBySeller(@Param('name') seller: string) {
-    const item = await this.itemService.findOneBySeller(seller);
-    if (item) {
+    const item = await this.itemService.findBySeller(seller);
+    if (item.length != 0) {
       return item;
     } else {
       throw new NotFoundException();
@@ -59,6 +59,9 @@ export class ItemController {
 
   @Get('delete/:id')
   async delete(@Param('id') id: string) {
+    if (id == ':id') {
+      throw new BadRequestException('Enter id');
+    }
     let item = await this.itemService.delete(id);
     if (item) {
       return item;

@@ -27,7 +27,7 @@ export class ItemService {
     return this.itemModel.findOne({ name: name }).exec();
   }
 
-  async findOneBySeller(seller: string): Promise<any> {
+  async findBySeller(seller: string): Promise<any> {
     return this.itemModel.find({ seller: seller }).exec();
   }
 
