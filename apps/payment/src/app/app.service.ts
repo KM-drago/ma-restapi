@@ -2,7 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    return { message: 'Welcome to payment!' };
+  getCardPayment(): { message: string } {
+    return { message: 'Card payment successful' };
+  }
+
+  getMobilePayment(): { message: string } {
+    return { message: 'Mobile payment successful' };
   }
 }
