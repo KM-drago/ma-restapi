@@ -4,6 +4,8 @@
   "projects": {
     "buyer": "apps/buyer",
     "delivery": "apps/delivery",
+    "frontend": "apps/frontend",
+    "frontend-e2e": "apps/frontend-e2e",
     "mail-sms": "apps/mail-sms",
     "payment": "apps/payment",
     "seller": "apps/seller"
