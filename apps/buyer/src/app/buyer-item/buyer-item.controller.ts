@@ -2,20 +2,23 @@ import {
   BadRequestException,
   Body,
   Controller,
-  Get,
+  Get, Headers,
   NotFoundException,
   Param,
   Post,
 } from '@nestjs/common';
 import { BuyerItemService } from './buyer-item.service';
 import { BuyerItemDto } from './dto/buyerItem.dto';
+import {ensureAccessOrThrow} from "../utils/authUtils";
 
 @Controller('buyer-item')
 export class BuyerItemController {
   constructor(private readonly buyerItemService: BuyerItemService) {}
 
   @Post('create')
-  async create(@Body() createItemDto: BuyerItemDto) {
+  async create(@Body() createItemDto: BuyerItemDto, @Headers() headers) {
+    console.log("hello");
+    ensureAccessOrThrow(headers.authorization, 'BUYER');
     return await this.buyerItemService.create(createItemDto);
   }
 
