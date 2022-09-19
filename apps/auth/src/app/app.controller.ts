@@ -3,6 +3,7 @@ import {Body, Controller, Get, Post, UnauthorizedException} from '@nestjs/common
 import { AppService } from './app.service';
 import {LoginUserDto} from "./dto/userlogin.dto";
 import {CreateUserDto} from "./dto/usercreate.dto";
+import {generateToken} from "./utils/authUtils";
 
 @Controller()
 export class AppController {
@@ -22,7 +23,9 @@ export class AppController {
     if (!user) {
       throw new UnauthorizedException();
     }
-    return user;
+    return {
+      token: generateToken(user)
+    };
   }
 
   @Post('create')
