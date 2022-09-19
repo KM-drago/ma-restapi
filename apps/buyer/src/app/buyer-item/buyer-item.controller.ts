@@ -34,7 +34,7 @@ export class BuyerItemController {
     if (id == ':id') {
       throw new BadRequestException('Enter id');
     }
-    let item = await this.buyerItemService.delete(id);
+    const item = await this.buyerItemService.delete(id);
     if (item) {
       return item;
     } else {
