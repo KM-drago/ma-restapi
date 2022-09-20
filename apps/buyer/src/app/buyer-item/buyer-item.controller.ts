@@ -17,8 +17,7 @@ export class BuyerItemController {
 
   @Post('create')
   async create(@Body() createItemDto: BuyerItemDto, @Headers() headers) {
-    console.log("hello");
-    ensureAccessOrThrow(headers.authorization, 'BUYER');
+    ensureAccessOrThrow(headers.authorization, ['BUYER']);
     return await this.buyerItemService.create(createItemDto);
   }
 
