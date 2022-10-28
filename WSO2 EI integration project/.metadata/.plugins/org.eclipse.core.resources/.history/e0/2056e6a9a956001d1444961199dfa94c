@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="MA-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/seller/item/find-all">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="msg" value="This works WSO2"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemFindAll"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/seller/item/find-by-name/{name}">
+        <inSequence>
+            <log level="custom">
+                <property name="sellerFindByName" value="sellerFindByName called"/>
+            </log>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

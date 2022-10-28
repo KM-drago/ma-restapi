@@ -2,9 +2,11 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Get,
   NotFoundException,
   Param,
+  Patch,
   Post,
 } from '@nestjs/common';
 import { ItemDto } from './dto/item.dto';
@@ -19,7 +21,7 @@ export class ItemController {
     return await this.itemService.create(createItemDto);
   }
 
-  @Post('update')
+  @Patch('update')
   async update(@Body() updateItemDto: any) {
     const updatedItem = await this.itemService.UpdateItem(
       updateItemDto._id,
@@ -34,17 +36,34 @@ export class ItemController {
 
   @Get('find-all')
   async findAll() {
-    return this.itemService.findAll();
+    const item = await this.itemService.findAll();
+    let filteredItemArr = this.filterItemArr(item);
+    if (filteredItemArr.length != 0) {
+      return filteredItemArr;
+    } else {
+      throw new NotFoundException();
+    }
   }
 
   @Get('find-by-seller/:name')
   async getAllBySeller(@Param('name') seller: string) {
     const item = await this.itemService.findBySeller(seller);
-    if (item.length != 0) {
-      return item;
+    let filteredItemArr = this.filterItemArr(item);
+    if (filteredItemArr.length != 0) {
+      return filteredItemArr;
     } else {
       throw new NotFoundException();
     }
+  }
+
+  filterItemArr(itemArr: any) {
+    let filteredItemArr = [];
+    for (let i = 0; i < itemArr.length; i++) {
+      if (itemArr[i].qty > 0) {
+        filteredItemArr.push(itemArr[i]);
+      }
+    }
+    return filteredItemArr;
   }
 
   @Get('find-by-name/:name')
@@ -57,7 +76,7 @@ export class ItemController {
     }
   }
 
-  @Get('delete/:id')
+  @Delete('delete/:id')
   async delete(@Param('id') id: string) {
     if (id == ':id') {
       throw new BadRequestException('Enter id');

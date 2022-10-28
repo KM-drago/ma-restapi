@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;MAConfigs/src/main/synapse-config/endpoints/sellerItemFindByName.xml&apos;" deleteContents="false" description="Delete resource &apos;MAConfigs/src/main/synapse-config/endpoints/sellerItemFindByName.xml&apos;" element1="/MAConfigs/src/main/synapse-config/endpoints/sellerItemFindByName.xml" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1666962844284"/>
+</session>

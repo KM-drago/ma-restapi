@@ -1,0 +1,18 @@
+INDEX VERSION 1.131+C:\Users\Kasun\Desktop\MA\WSO2IS7.2WS\MA\.metadata\.plugins\org.eclipse.jdt.core
+698421304.index
+820209765.index
+3767292978.index
+4132922945.index
+3918879226.index
+2795969813.index
+3496142557.index
+4282209857.index
+2308163268.index
+3440401829.index
+1160474187.index
+2359924214.index
+880699312.index
+123241358.index
+1558178012.index
+2692085441.index
+277409640.index

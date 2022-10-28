@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="MA-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/seller/item/find-all">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="msg" value="This works WSO2"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemFindAll"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/seller/item/find-by-name/{name}">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="sellerFindByName" value="sellerFindByName called"/>
+            </log>
+            <send>
+                <endpoint key="sellerFindByName"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/seller/item/create">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="sellerItemCreate" value="sellerItemCreate called"/>
+            </log>
+            <send>
+                <endpoint key="sellerCreate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PATCH" uri-template="/seller/item/update">
+        <inSequence>
+            <log level="custom">
+                <property name="sellerItemUpdate" value="sellerItemUpdate called"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemUpdate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/seller/item/find-by-seller/{name}">
+        <inSequence>
+            <log level="custom">
+                <property name="sellerItemFindAllBySeller" value="sellerItemFindAllBySeller called"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemFindBySeller"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/payment/card">
+        <inSequence>
+            <send>
+                <endpoint key="paymentCard"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/payment/mobile">
+        <inSequence>
+            <send>
+                <endpoint key="paymentMobile"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/delivery">
+        <inSequence>
+            <send>
+                <endpoint key="deliverySetDeliveryData"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/mail-sms/mail/send/paymentConfirmation/{mail}">
+        <inSequence>
+            <send>
+                <endpoint key="mailSend"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/mail-sms/sms/send/{teleno}">
+        <inSequence>
+            <send>
+                <endpoint key="smsSend"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/buyer/buyer-item/create">
+        <inSequence>
+            <send>
+                <endpoint key="BuyerItemCreate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/buyer/buyer-item/find-by-buyer/{name}">
+        <inSequence>
+            <send>
+                <endpoint key="buyerItemFindByName"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/buyer/buyer-item/delete/{id}">
+        <inSequence>
+            <send>
+                <endpoint key="buyerItemDelete"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/auth/login">
+        <inSequence>
+            <send>
+                <endpoint key="authLogin"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/auth/create">
+        <inSequence>
+            <send>
+                <endpoint key="authCreate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/seller/item/delete/{id}">
+        <inSequence>
+            <send>
+                <endpoint key="sellerDeleteItem"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

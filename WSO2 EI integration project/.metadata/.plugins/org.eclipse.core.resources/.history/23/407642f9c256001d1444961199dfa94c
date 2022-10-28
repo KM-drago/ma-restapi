@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/api" name="MA-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/seller/item/find-all">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="msg" value="This works WSO2"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemFindAll"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/seller/item/find-by-name/{name}">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="sellerFindByName" value="sellerFindByName called"/>
+            </log>
+            <send>
+                <endpoint key="sellerFindByName"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/seller/item/create">
+        <inSequence>
+            <log description="log" level="custom">
+                <property name="sellerItemCreate" value="sellerItemCreate called"/>
+            </log>
+            <send>
+                <endpoint key="sellerCreate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/seller/item/update">
+        <inSequence>
+            <log level="custom">
+                <property name="sellerItemUpdate" value="sellerItemUpdate called"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemUpdate"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET">
+        <inSequence>
+            <log level="custom">
+                <property name="sellerItemFindAllBySeller" value="sellerItemFindAllBySeller called"/>
+            </log>
+            <send>
+                <endpoint key="sellerItemFindBySeller"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/payment/card">
+        <inSequence>
+            <send>
+                <endpoint key="paymentCard"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/payment/mobile">
+        <inSequence>
+            <send>
+                <endpoint key="paymentMobile"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

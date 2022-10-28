@@ -2,14 +2,16 @@ import {
   BadRequestException,
   Body,
   Controller,
-  Get, Headers,
+  Delete,
+  Get,
+  Headers,
   NotFoundException,
   Param,
   Post,
 } from '@nestjs/common';
 import { BuyerItemService } from './buyer-item.service';
 import { BuyerItemDto } from './dto/buyerItem.dto';
-import {ensureAccessOrThrow} from "../utils/authUtils";
+import { ensureAccessOrThrow } from '../utils/authUtils';
 
 @Controller('buyer-item')
 export class BuyerItemController {
@@ -17,7 +19,7 @@ export class BuyerItemController {
 
   @Post('create')
   async create(@Body() createItemDto: BuyerItemDto, @Headers() headers) {
-    ensureAccessOrThrow(headers.authorization, ['BUYER']);
+    //ensureAccessOrThrow(headers.authorization, ['BUYER']);
     return await this.buyerItemService.create(createItemDto);
   }
 
@@ -31,7 +33,7 @@ export class BuyerItemController {
     }
   }
 
-  @Get('delete/:id')
+  @Delete('delete/:id')
   async delete(@Param('id') id: string) {
     if (id == ':id') {
       throw new BadRequestException('Enter id');

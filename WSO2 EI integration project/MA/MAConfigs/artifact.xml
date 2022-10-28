@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="sellerItemFindAll" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerItemFindAll.xml</file>
+    </artifact>
+    <artifact name="MA-api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MA-api.xml</file>
+    </artifact>
+    <artifact name="sellerFindByName" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerFindByName.xml</file>
+    </artifact>
+    <artifact name="sellerCreate" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerCreate.xml</file>
+    </artifact>
+    <artifact name="sellerItemUpdate" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerItemUpdate.xml</file>
+    </artifact>
+    <artifact name="paymentCard" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/paymentCard.xml</file>
+    </artifact>
+    <artifact name="paymentMobile" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/paymentMobile.xml</file>
+    </artifact>
+    <artifact name="deliverySetDeliveryData" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/deliverySetDeliveryData.xml</file>
+    </artifact>
+    <artifact name="mailSend" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/mailSend.xml</file>
+    </artifact>
+    <artifact name="smsSend" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/smsSend.xml</file>
+    </artifact>
+    <artifact name="BuyerItemCreate" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BuyerItemCreate.xml</file>
+    </artifact>
+    <artifact name="buyerItemFindByName" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/buyerItemFindByName.xml</file>
+    </artifact>
+    <artifact name="buyerItemDelete" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/buyerItemDelete.xml</file>
+    </artifact>
+    <artifact name="authLogin" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/authLogin.xml</file>
+    </artifact>
+    <artifact name="authCreate" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/authCreate.xml</file>
+    </artifact>
+    <artifact name="sellerItemFindBySeller" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerItemFindBySeller.xml</file>
+    </artifact>
+    <artifact name="sellerDeleteItem" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerDeleteItem.xml</file>
+    </artifact>
+</artifacts>

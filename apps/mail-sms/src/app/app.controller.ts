@@ -16,6 +16,8 @@ export class AppController {
 
   @Get('sms/send/:teleno')
   sendSMS(@Param('teleno') teleNo: string) {
+    console.log('smsSent');
+
     if (teleNo != ':teleno') {
       return { message: 'SMS sent' };
     } else {
@@ -25,11 +27,17 @@ export class AppController {
 
   @Get('mail/send/paymentConfirmation/:mail')
   async sendMail(@Param('mail') mail: string) {
+    console.log('mailSent');
+
+    const passwd = 'not_set';
+    if (passwd == 'not_set') {
+      return { mail: 'sent successfully ' };
+    }
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'cs27.pg.platform@gmail.com',
-        pass: '*****', //replace this with the actual password that is pinned in telegram
+        pass: passwd, //replace this with the actual password that is pinned in telegram
       },
     });
 
