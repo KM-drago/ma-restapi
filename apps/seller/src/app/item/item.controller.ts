@@ -62,7 +62,7 @@ export class ItemController {
     if (id == ':id') {
       throw new BadRequestException('Enter id');
     }
-    let item = await this.itemService.delete(id);
+    const item = await this.itemService.delete(id);
     if (item) {
       return item;
     } else {
